@@ -1,30 +1,68 @@
-# Octotask & Begin example
+# Octotask & Vercel example
 
-This repository is an example of how to deploy the "Hello, World" of octotask apps to [Begin](https://begin.com/).
+This repository is an example of how to deploy the "Hello, World" of octotask apps to [Vercel](https://vercel.com).
 
-[![Begin build status](https://buildstatus.begin.app/dream-zdj/status.svg)](https://begin.com)
+## Create the GiHub App
 
-## Deploy your own
+We will first start by running the app localy in order to create the GitHub App and initialize the environment variables.
 
-[![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/octotask/example-begin)
+1. Install dependencies
 
-Deploy your own clone of this app to Begin!
+```
+npm install
+```
 
-Once deployed, make sure to configure the environment variables for your production environment once you [registered a GitHub App](https://github.com/settings/apps/new)
+2. Start the server
 
-1. `APP_ID`
-2. `PRIVATE_KEY` (base64 encoded, you can do that [here](https://www.base64encode.org/))
-3. `WEBHOOK_SECRET`
+```
+npm start
+```
 
-## Local setup
+3. Go to http://localhost:3000/, click `Register GitHub App` and select the app name of your choice.
 
-- Start the local dev server: `npm start`
-- Run your tests: `npm test`
+4. Select the repository (or organization) where your GitHub App will be installed. _It can be completly different from the GitHub App repo_
 
-## Reference
+Well done! Your GitHub app has been created but is not running yet. You can close the process with `Ctrl+C` in your terminal.
+Note that a file called `.env` has been created. It contains all the necessary informations to run your app localy or remotely.
 
-- [Octotask](https://octotask.github.io/docs/) - The Octotask documentation
-- [Begin Quickstart](https://docs.begin.com/en/guides/quickstart/) - basics on working locally, project structure, deploying, and accessing your Begin app
-- [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions) - basics on expanding the capabilities of your app
+## Run localy
 
-Head to [docs.begin.com](https://docs.begin.com/) to learn more about Begin!
+If you want to run your GitHub App localy, you can use
+
+```
+npm start
+```
+
+## Deploy on Vercel
+
+In this section, we will continuously deployed your GitHub App using [Vercel](https://vercel.com).
+
+1. On your vercel Dashboard, create a new a project.
+
+2. Select your GitHub App's repository.
+
+3. Select a project name and expand the `Environment Variables` view.
+
+4. Open the file `.env` and copy all the variables to Vercel Environment Variables.
+
+5. Hit deploy !
+
+Your app is now running on Vercel but it is not listening to the correct Webhook url.
+
+6. Go to your [GitHub App page](https://github.com/settings/apps) and `Edit` your app.
+
+7. Replace the `Webhook URL` with `https://<my-vercel-project-name>.vercel.app/api/github/webhooks`.
+
+8. Save
+
+Your GitHub App is now configured to send webhooks to your Vercel app. The [api/github/webhooks/index.js](api/github/webhooks/index.js) file is handling requests to `POST /api/github/webhooks`. You can now open an issue on the repo where your app is installed.
+
+## Other examples[^1]
+
+- [Using TypeScript + Vercel](https://github.com/oscard0m/example-vercel-ts) by [@oscard0m](https://github.com/oscard0m)
+
+[^1]: Do you have any other examples you would like to share? Feel free to open a Pull Request and share yours!
+
+## License
+
+[ISC](LICENSE)

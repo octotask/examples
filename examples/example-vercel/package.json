@@ -1,24 +1,20 @@
 {
-  "name": "@octotask/example-begin",
-  "version": "0.0.0-development",
+  "name": "@octotask/example-vercel",
+  "version": "1.0.0",
   "private": true,
-  "description": "Octotask & Begin.com example",
+  "description": "Octotask & Google Cloud Functions example",
   "scripts": {
-    "start": "npx sandbox",
+    "start": "octotask run ./app.js",
     "test": "node test.js"
   },
-  "devDependencies": {
-    "@architect/sandbox": "^5.0.0",
-    "nock": "^13.0.7",
-    "octotask": "^1.1.1",
-    "smee-client": "^1.2.2",
-    "uvu": "^0.5.1"
-  },
-  "repository": "github:octotask/example",
   "license": "ISC",
-  "release": {
-    "branches": [
-      "main"
-    ]
+  "repository": "github:octotask/examples",
+  "dependencies": {
+    "octotask": "^1.1.1"
+  },
+  "devDependencies": {
+    "nock": "^13.2.9",
+    "smee-client": "^1.2.3",
+    "uvu": "^0.5.6"
   }
 }

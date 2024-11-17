@@ -6,7 +6,7 @@ nock.disableNetConnect()
 
 const { Octotask, OctotaskOctokit } = require('octotask')
 
-const app = require('./src/http/post-api-github-webhooks/app')
+const app = require('./app')
 
 /** @type {import('octotask').Octotask */
 let octotask
@@ -29,14 +29,11 @@ test.before.each(() => {
 test('recieves issues.opened event', async function () {
   const mock = nock('https://api.github.com')
     // create new check run
-    .post(
-      '/repos/octotask/example-aws-lambda-serverless/issues/1/comments',
-      (requestBody) => {
-        assert.equal(requestBody, { body: 'Hello, World!' })
+    .post('/repos/octotask/example-vercel/issues/1/comments', (requestBody) => {
+      assert.equal(requestBody, { body: 'Hello, World!' })
 
-        return true
-      }
-    )
+      return true
+    })
     .reply(201, {})
 
   await octotask.receive({
@@ -48,7 +45,7 @@ test('recieves issues.opened event', async function () {
         owner: {
           login: 'octotask',
         },
-        name: 'example-aws-lambda-serverless',
+        name: 'example-vercel',
       },
       issue: {
         number: 1,
