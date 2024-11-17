@@ -35,6 +35,7 @@ export default function (plop) {
         'app.arc',
         'public/index.html',
         'public/index.js',
+        'pnpm-lock.yaml',
       ]
       const actions = []
 
