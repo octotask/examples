@@ -1,5 +1,5 @@
 name: Say Hello World
-"on":
+'on':
   issues:
     types:
       - opened

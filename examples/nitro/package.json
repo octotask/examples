@@ -1,0 +1,16 @@
+{
+  "name": "octotask-nitro",
+  "type": "module",
+  "scripts": {
+    "prepare": "nitropack prepare",
+    "dev": "nitropack dev",
+    "build": "nitropack build",
+    "preview": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "@octokit/webhooks-types": "^7.3.1",
+    "h3": "^1.10.1",
+    "nitropack": "latest",
+    "octotask": "^1.1.1"
+  }
+}
