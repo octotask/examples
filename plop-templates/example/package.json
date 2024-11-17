@@ -1,0 +1,24 @@
+{
+  "name": "@octotask/example-begin",
+  "version": "0.0.0-development",
+  "private": true,
+  "description": "Octotask & Begin.com example",
+  "scripts": {
+    "start": "npx sandbox",
+    "test": "node test.js"
+  },
+  "devDependencies": {
+    "@architect/sandbox": "^5.0.0",
+    "nock": "^13.0.7",
+    "octotask": "^1.1.1",
+    "smee-client": "^1.2.2",
+    "uvu": "^0.5.1"
+  },
+  "repository": "github:octotask/example",
+  "license": "ISC",
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}

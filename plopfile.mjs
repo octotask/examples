@@ -25,16 +25,16 @@ export default function (plop) {
 
       const filesToAlwaysCopyOver = [
         'README.md',
-        'tsconfig.json',
-        '.eslintrc.json',
+        'test.js',
         '.gitignore',
         'package.json',
-        'pnpm-lock.yaml',
-        'app/layout.tsx',
-        'app/page.tsx',
-        'postcss.config.js',
-        'tailwind.config.js',
-        'public/favicon.ico',
+        'src/http/post-api-github-webhooks/app.js',
+        'src/http/post-api-github-webhooks/index.js',
+        'src/http/post-api-github-webhooks/package.json',
+        'app.yml',
+        'app.arc',
+        'public/index.html',
+        'public/index.js',
       ]
       const actions = []
 
