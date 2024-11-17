@@ -15,10 +15,5 @@
     "uvu": "^0.5.1"
   },
   "repository": "github:octotask/example",
-  "license": "ISC",
-  "release": {
-    "branches": [
-      "main"
-    ]
-  }
+  "license": "ISC"
 }
